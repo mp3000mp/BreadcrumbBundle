@@ -1,0 +1,14 @@
+{%- spaceless -%}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb"{% if breadcrumb.id is not empty %} id="{{ breadcrumb.id }}"{% endif %}>
+            {% for item in breadcrumb.items %}
+                {% set trans = item.translationDomain is empty ? item.label : item.label|trans(item.translationArgs, item.translationdomain) %}
+                {% if loop.last %}
+                    <li class="breadcrumb-item active" aria-current="page">{{ trans }}</li>
+                {% else %}
+                    <li class="breadcrumb-item"><a href="{{ item.href }}">{{ trans }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </nav>
+{%- endspaceless -%}

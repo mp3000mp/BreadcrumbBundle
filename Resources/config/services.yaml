@@ -1,0 +1,13 @@
+services:
+  mp3000mp_breadcrumb.service:
+    class: MP3000MP\BreadcrumbBundle\BreadcrumbManager
+    arguments:
+      $options: '%mp3000mp_breadcrumb.options%'
+
+  MP3000MP\BreadcrumbBundle\BreadcrumbManager:
+    alias: mp3000mp_breadcrumb.service
+
+  mp3000mp_breadcrumb.twig:
+    class: MP3000MP\BreadcrumbBundle\Twig\Extension\BreadcrumbExtension
+    tags: ['twig.extension']
+    autowire: true

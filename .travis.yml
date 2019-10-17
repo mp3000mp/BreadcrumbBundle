@@ -1,0 +1,20 @@
+language: php
+
+php:
+  - 7.2
+  - 7.3
+
+install:
+  - curl -s http://getcomposer.org/installer | php
+  - php composer.phar install --dev --no-interaction
+  - composer install
+  - ./vendor/bin/simple-phpunit install
+
+script:
+  - mkdir -p build/logs
+  - composer validate --strict --no-check-lock
+  - ./vendor/bin/php-cs-fixer
+  - ./vendor/bin/simple-phpunit
+
+after_success:
+  - travis_retry php vendor/bin/php-coveralls

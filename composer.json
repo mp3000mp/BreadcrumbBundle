@@ -1,0 +1,46 @@
+{
+    "name": "mp3000mp/breadcrumb-bundle",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "description": "A simple breadcrumb bundle for Symfony 4",
+    "keywords": [
+        "Symfony",
+        "bundle",
+        "breadcrumb"
+    ],
+    "homepage": "https://github.com/mp3000mp/breadcrumbbundle",
+    "authors": [
+        {
+            "name": "Matthias Perret",
+            "email": "moussadedijon@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "symfony/framework-bundle": "^4.0",
+        "symfony/twig-bundle": "^4.0",
+        "symfony/translation": "^4.0"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^4.0",
+        "friendsofphp/php-cs-fixer": "^2.0",
+        "phpunit/php-code-coverage": "^6.1",
+        "php-coveralls/php-coveralls": "^2.1"
+    },
+    "suggest": {
+        "whiteoctober/BreadcrumbsBundle\n": "Provides a more complete breadcrumb bundle for Symfony"
+    },
+    "autoload": {
+        "psr-4": {
+            "MP3000MP\\BreadcrumbBundle\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x"
+        }
+    },
+    "scripts": {
+        "test": "./vendor/bin/simple-phpunit --coverage-html ./build/html"
+    }
+}
