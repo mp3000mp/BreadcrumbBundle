@@ -13,7 +13,7 @@ install:
 script:
   - mkdir -p build/logs
   - composer validate --strict --no-check-lock
-  - ./vendor/bin/php-cs-fixer
+  - ./vendor/bin/php-cs-fixer fix
   - ./vendor/bin/simple-phpunit
 
 after_success:
